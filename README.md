@@ -58,17 +58,6 @@ gcc -Wall -g hachage.c memorymanager.c parser.c data_seg.c \
     exercice5.c exercice6.c exercice7.c exercice8.c \
     test_ex7.c -o test_ex7
 ```
-
-### Avec détection de fuites mémoire (AddressSanitizer)
-
-```bash
-gcc -g -fsanitize=address,undefined hachage.c memorymanager.c parser.c data_seg.c \
-    exercice5.c exercice6.c exercice7.c exercice8.c \
-    test_ex1.c -o test_ex1
-```
-
----
-
 ## Exécution
 
 ```bash
@@ -216,26 +205,7 @@ Allocation dynamique d'un segment extra `ES` selon trois stratégies.
 | `handle_instruction(cpu, instr, dest, src)` | Dispatcher complet de toutes les instructions |
 
 ---
-
-## Instructions supportées
-
-| Instruction | Description |
-|---|---|
-| `MOV dest, src` | Copie src dans dest |
-| `ADD dest, src` | `dest += src` |
-| `CMP dest, src` | Met à jour `ZF` et `SF` |
-| `JMP label` | Saut inconditionnel |
-| `JZ label` | Saut si `ZF == 1` |
-| `JNZ label` | Saut si `ZF == 0` |
-| `PUSH reg` | Empile la valeur du registre |
-| `POP reg` | Dépile dans le registre |
-| `ALLOC` | Alloue le segment ES |
-| `FREE` | Libère le segment ES |
-| `HALT` | Arrête l'exécution |
-
----
-
-## Dépendances
+--KW--
 
 - **GCC** ≥ 9
 - **libc** standard (pas de dépendances externes)
